@@ -40,29 +40,31 @@ function Login() {
   };
 
   return (
-    <form>
-      <h3>Sign In</h3>
-      <div className="form-group">
-        <label>Email address</label>
-        <input
-          type="email"
-          className="form-control"
-          placeholder="Enter email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </div>
+    <div className="auth-wrapper">
+      <div className="auth-inner">
+        <form>
+          <h3>Sign In</h3>
+          <div className="form-group">
+            <label>Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter email"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </div>
 
-      <div className="form-group">
-        <label>Password</label>
-        <input
-          type="password"
-          className="form-control"
-          placeholder="Enter password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              placeholder="Enter password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
 
-      {/* <div className="form-group">
+          {/* <div className="form-group">
         <div className="custom-control custom-checkbox">
           <input
             type="checkbox"
@@ -74,16 +76,18 @@ function Login() {
           </label>
         </div>
       </div> */}
-      {error ? <label>Email or Password is invalid!</label> : null}
-      <button
-        type="submit"
-        className="btn btn-primary btn-block"
-        onClick={Login}
-      >
-        Submit
-      </button>
-      <p className="forgot-password text-right">Forgot password?</p>
-    </form>
+          {error ? <label>Email or Password is invalid!</label> : null}
+          <button
+            type="submit"
+            className="btn btn-primary btn-block"
+            onClick={Login}
+          >
+            Submit
+          </button>
+          <p className="forgot-password text-right">Forgot password?</p>
+        </form>
+      </div>
+    </div>
   );
 }
 

@@ -5,11 +5,11 @@ import Login from "./components/login";
 import { Router, Link } from "@reach/router";
 import SignUp from "./components/signup";
 import Store from "./components/store";
+import Article from "./components/article";
 import UserContext from "./context/userContext";
 
 function App() {
   const [user, setUser] = useState({});
-  console.log(user);
   return (
     <div className="App">
       <UserContext.Provider value={[user, setUser]}>
@@ -48,15 +48,12 @@ function App() {
             </div>
           </div>
         </nav>
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <Router>
-              <Login path="/login"></Login>
-              <SignUp path="/signup"></SignUp>
-              <Store path="/"></Store>
-            </Router>
-          </div>
-        </div>
+        <Router>
+          <Login path="/login"></Login>
+          <SignUp path="/signup"></SignUp>
+          <Store path="/"></Store>
+          <Article path="/Article/:slugId"></Article>
+        </Router>
       </UserContext.Provider>
     </div>
   );

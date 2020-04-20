@@ -56,6 +56,7 @@ html,
   justify-content: center;
   flex-direction: column;
   text-align: left;
+  margin-top: 100px;
 }
 
 .auth-inner {
@@ -96,3 +97,7 @@ html,
 .forgot-password a {
   color: #167bff;
 }
+/* for the reach router accessability div add with tabindex */
+/* div[tabindex] {
+  height: 100%;
+} */
