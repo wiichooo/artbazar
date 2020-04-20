@@ -42,7 +42,7 @@ function Store() {
   return (
     <div
       className="col-md-12"
-      style={{ marginTop: 50, paddingLeft: "10%", paddingRight: "10%" }}
+      style={{ paddingTop: 50, paddingLeft: "10%", paddingRight: "10%" }}
     >
       {content}
     </div>

@@ -22,7 +22,7 @@ function ArticleCard(props) {
           {props.data.slug}
         </p>
         <Link to={`/Article/${props.data.slug}`} className="btn btn-primary">
-          Go somewhere
+          Go to this article
         </Link>
       </div>
       <div className="card-footer text-muted">

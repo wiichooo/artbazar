@@ -21,14 +21,20 @@ function Article(props) {
 
   return (
     <div
-      className="col-md-12"
-      style={{ marginTop: 50, paddingLeft: "10%", paddingRight: "10%" }}
+      className="col-md-12 art-wrapper"
+      style={{ paddingLeft: "10%", paddingRight: "10%" }}
     >
-      <div>{article.title}Title</div>
-      <div>{article.desc}</div>
-      <div>{article.body}</div>
-      <div>{article.favoritesCount}</div>
-      {/* <div>comments</div> */}
+      <div className="art-inner">
+        <div>
+          <h1>{article.title}</h1>
+        </div>
+        <div>
+          <h3>{article.description}</h3>
+        </div>
+        <div>{article.body}</div>
+        <div>{article.favoritesCount}</div>
+        {/* <div>comments</div> */}
+      </div>
     </div>
   );
 }
