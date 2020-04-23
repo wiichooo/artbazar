@@ -5,6 +5,7 @@ import ArticleCard from "./articleCard";
 function Store() {
   const [user] = useContext(userContext);
   const [articles, setArticles] = useState([]);
+  const [All, setAll] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -19,9 +20,21 @@ function Store() {
       const data = await response.json();
       console.log(data);
       setArticles(data.articles || []);
+      setAll(data.articles || []);
     }
     fetchData();
   }, []);
+
+  const handleChange = (event) => {
+    //setArticles(All);
+    //  if (event.target.value !== "") {
+    setArticles(
+      All.filter((x) =>
+        x.title.toLowerCase().includes(event.target.value.toLowerCase())
+      )
+    );
+    // }
+  };
 
   const rows = [...Array(Math.ceil(articles.length / 4))];
   const productRows = rows.map((row, idx) =>
@@ -44,6 +57,13 @@ function Store() {
       className="col-md-12"
       style={{ paddingTop: 50, paddingLeft: "10%", paddingRight: "10%" }}
     >
+      <input
+        type="text"
+        className="input"
+        placeholder="Search..."
+        style={{ width: "100%", marginTop: 10 }}
+        onChange={handleChange}
+      />
       {content}
     </div>
   );
